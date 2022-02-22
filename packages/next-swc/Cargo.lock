@@ -805,12 +805,14 @@ checksum = "e4a24736216ec316047a1fc4252e27dabb04218aa4a3f37c6e7ddbf1f9782b54"
 name = "next-swc"
 version = "0.0.0"
 dependencies = [
+ "byteorder",
  "chrono",
  "easy-error",
  "either",
  "fxhash",
  "once_cell",
  "pathdiff",
+ "radix_fmt",
  "regex",
  "serde",
  "serde_json",
