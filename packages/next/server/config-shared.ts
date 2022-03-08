@@ -382,12 +382,13 @@ export interface NextConfig extends Record<string, any> {
           exclude?: string[]
         }
     styledComponents?: boolean
-    emotion?: {
-      enabled?: boolean
-      sourceMap?: boolean
-      autoLabel?: 'dev-only' | 'always' | 'never'
-      labelFormat?: string
-    }
+    emotion?:
+      | boolean
+      | {
+          sourceMap?: boolean
+          autoLabel?: 'dev-only' | 'always' | 'never'
+          labelFormat?: string
+        }
   }
 
   /**
