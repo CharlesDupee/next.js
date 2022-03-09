@@ -612,7 +612,7 @@ describe('Telemetry CLI', () => {
     expect(event1).toMatch(/"@next\/next\/.+?": "(off|warn|error)"/)
   })
 
-  it('emits telemery for usage of image, script & dynamic', async () => {
+  it.only('emits telemery for usage of image, script & dynamic', async () => {
     const { stderr } = await nextBuild(appDir, [], {
       stderr: true,
       env: { NEXT_TELEMETRY_DEBUG: 1 },
@@ -631,6 +631,7 @@ describe('Telemetry CLI', () => {
     regex.exec(stderr).pop() // swcReactRemoveProperties
     regex.exec(stderr).pop() // swcRemoveConsole
     regex.exec(stderr).pop() // swcImportSource
+    regex.exec(stderr).pop() // swcEmotion
     const image = regex.exec(stderr).pop()
     expect(image).toContain(`"featureName": "next/image"`)
     expect(image).toContain(`"invocationCount": 1`)

@@ -1500,6 +1500,7 @@ export default async function getBaseWebpackConfig(
             ],
             ['swcRemoveConsole', !!config.compiler?.removeConsole],
             ['swcImportSource', !!jsConfig?.compilerOptions?.jsxImportSource],
+            ['swcEmotion', !!config.experimental.emotion],
           ])
         ),
     ].filter(Boolean as any as ExcludesFalse),
