@@ -107,6 +107,13 @@ export interface ExperimentalConfig {
   outputFileTracingRoot?: string
   outputStandalone?: boolean
   middlewareSourceMaps?: boolean
+  emotion?:
+    | boolean
+    | {
+        sourceMap?: boolean
+        autoLabel?: 'dev-only' | 'always' | 'never'
+        labelFormat?: string
+      }
 }
 
 /**
@@ -382,13 +389,6 @@ export interface NextConfig extends Record<string, any> {
           exclude?: string[]
         }
     styledComponents?: boolean
-    emotion?:
-      | boolean
-      | {
-          sourceMap?: boolean
-          autoLabel?: 'dev-only' | 'always' | 'never'
-          labelFormat?: string
-        }
   }
 
   /**
